@@ -1,7 +1,18 @@
-const UsersList = () => {
-    return <ul>
-        
-    </ul>
-}
+import Card from "../UI/Card";
+import style from "./UsersList.module.css";
 
-export default UsersList
+const UsersList = (props) => {
+  return (
+    <Card classname={style.users}>
+      <ul>
+        {props.users.map(user => (
+          <li>
+            {user.name} ({user.age} years old)
+          </li>
+        ))}
+      </ul>
+    </Card>
+  );
+};
+
+export default UsersList;
