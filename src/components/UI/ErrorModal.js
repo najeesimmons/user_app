@@ -4,7 +4,7 @@ import Card from "./Card";
 import ReactDOM from "react-dom";
 
 const Backdrop = (props) => {
-  return <div className={style.backdrop} onConfirm={props.onConfirm} />;
+  return <div className={style.backdrop} onClick={props.onConfirm} />;
 };
 
 const ModalOverlay = (props) => {
@@ -22,6 +22,7 @@ const ModalOverlay = (props) => {
     </Card>
   );
 };
+
 const ErrorModal = (props) => {
   return (
     <>
@@ -30,7 +31,7 @@ const ErrorModal = (props) => {
         document.getElementById("backdrop-root")
       )}
       {ReactDOM.createPortal(
-        <ModalOverlay title={props.title} message={props.message} onCofirm={props.onConfirm } />,
+        <ModalOverlay title={props.title} message={props.message} onConfirm={props.onConfirm } />,
         document.getElementById("overlay-root")
       )}
     </>
